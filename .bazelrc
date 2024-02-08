@@ -1,0 +1,3 @@
+test --combined_report=lcov
+test --nocache_test_results
+test --collect_code_coverage

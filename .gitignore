@@ -1,0 +1,6 @@
+.DS_STORE
+bazel-bin
+bazel-out
+bazel-testlogs
+bazel-coverage-bug
+MODULE.bazel.lock

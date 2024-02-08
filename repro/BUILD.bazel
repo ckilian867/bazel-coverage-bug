@@ -1,0 +1,20 @@
+java_import(
+    name = "bytebuddy",
+    jars = ["bytebuddy-1.12.20.jar"],
+)
+
+java_library(
+    name = "repro",
+    srcs = ["src/main/java/com/repro/Repro.java"],
+)
+
+java_test(
+    name = "repro_test",
+    srcs = ["src/test/java/com/repro/ReproTest.java"],
+    test_class = "com.repro.ReproTest",
+    deps = [
+        ":repro",
+    ],
+    jvm_flags = ["-javaagent:$(rootpath :bytebuddy)"],
+    data = [":bytebuddy"],
+)
